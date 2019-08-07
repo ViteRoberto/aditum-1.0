@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  }
+  },
+  { path: 'qr-generador', loadChildren: './qr-generador/qr-generador.module#QrGeneradorPageModule' }
 ];
 
 @NgModule({
