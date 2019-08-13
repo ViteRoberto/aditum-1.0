@@ -8,7 +8,23 @@
 </ion-header>
 
 <ion-content>
+  <ion-fab-button size="small" (click)=qrPlus() horizontal="end">
+        <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+
+  <ion-card disabled="true">
+      <ion-card-content slot="center">
+        <h1>{{qrCounter}}</h1>
+      </ion-card-content>
+    </ion-card>
+
+  <ion-fab-button size="small" (click)=qrMinus() horizontal="start">
+      <ion-icon name="remove"></ion-icon>
+  </ion-fab-button>
+    
+  <br><br><br>
   <ion-button color="secondary" expand="full" strong="true" (click)=createArrayString()>Crear Codigos QR</ion-button>
+  <ion-button color="primary" expand="full" strong="true" (click)=qrReader()>Lector Codigos QR</ion-button>
   <ion-card *ngFor="let string of strings">
     <ion-card-content>
       <ngx-qrcode [qrc-value]="string"></ngx-qrcode>
