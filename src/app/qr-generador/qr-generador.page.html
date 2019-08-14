@@ -23,13 +23,14 @@
   </ion-fab-button>
     
   <br><br><br>
+  <br>
   <ion-button color="secondary" expand="full" strong="true" (click)=createArrayString()>Crear Codigos QR</ion-button>
   <ion-button color="primary" expand="full" strong="true" (click)=qrReader()>Lector Codigos QR</ion-button>
   <ion-card *ngFor="let string of strings">
     <ion-card-content>
       <ngx-qrcode [qrc-value]="string"></ngx-qrcode>
       <p>Value: {{string}}</p>
-    </ion-card-content>
+      </ion-card-content>
   </ion-card>
 </ion-content>
 
