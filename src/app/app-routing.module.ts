@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'inicial',
     pathMatch: 'full'
   },
   {
@@ -15,7 +15,9 @@ const routes: Routes = [
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
   },
-  { path: 'qr-generador', loadChildren: './qr-generador/qr-generador.module#QrGeneradorPageModule' }
+  { path: 'qr-generador', loadChildren: './qr-generador/qr-generador.module#QrGeneradorPageModule' },
+  
+  { path: 'inicial', loadChildren: './inicial/inicial.module#InicialPageModule' }
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Contacts, Contact, ContactName, ContactField } from '@ionic-native/contacts/ngx';
 
 @Component({
   selector: 'app-list',
@@ -20,7 +21,10 @@ export class ListPage implements OnInit {
     'build'
   ];
   public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
+
+  myContacts: Contact[] = [];
+
+  constructor(private contacts: Contacts) {
     for (let i = 1; i < 11; i++) {
       this.items.push({
         title: 'Item ' + i,
@@ -28,6 +32,18 @@ export class ListPage implements OnInit {
         icon: this.icons[Math.floor(Math.random() * this.icons.length)]
       });
     }
+  }
+
+  cargarContactos(){
+    let options = {
+      filter: '',
+      multiple: true,
+      hasPhoneNumber: true
+    };
+    this.contacts.find(['*'], options).then((contacts: Contact[]) => {
+      this.myContacts = contacts;
+      console.log('Contacts: ', contacts);
+    });
   }
 
   ngOnInit() {
