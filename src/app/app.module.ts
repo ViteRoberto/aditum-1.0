@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { Contacts } from '@ionic-native/contacts/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,8 @@ import { Contacts } from '@ionic-native/contacts/ngx';
     SplashScreen,
     QRScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Contacts
+    Contacts,
+    Facebook
   ],
   bootstrap: [AppComponent]
 })
