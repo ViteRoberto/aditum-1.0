@@ -25,6 +25,11 @@ export class AppComponent {
       title: 'QR',
       url: '/qr-generador',
       icon: 'barcode'
+    },
+    {
+      title: 'Venta evento',
+      url: '/venta',
+      icon: 'pricetag'
     }
   ];
 
