@@ -18,7 +18,10 @@ const routes: Routes = [
   { path: 'qr-generador', loadChildren: './qr-generador/qr-generador.module#QrGeneradorPageModule' },
   
   { path: 'inicial', loadChildren: './inicial/inicial.module#InicialPageModule' },
-  { path: 'venta', loadChildren: './venta/venta.module#VentaPageModule' }
+  { path: 'venta', loadChildren: './venta/venta.module#VentaPageModule' },
+  { path: 'evento', loadChildren: './evento/evento.module#EventoPageModule' },
+  { path: 'evento/:id', loadChildren: './evento/evento.module#EventoPageModule'},
+  { path: 'devento', loadChildren: './devento/devento.module#DeventoPageModule' }
 ];
 
 @NgModule({

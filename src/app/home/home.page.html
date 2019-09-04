@@ -10,7 +10,19 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-card>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let evento of eventos">
+      <ion-item lines="inset" button [routerLink]="['/evento', evento.id]">
+        <ion-label>
+          {{evento.nombre}}
+        </ion-label>
+      </ion-item>
+
+    </ion-item-sliding>
+  </ion-list>
+  <ion-button routerLink="/evento" routerDirection="forward">Agregar Evento</ion-button>
+  <!--<ion-card>
     <ion-row>
       <ion-col size="4" offset="4">
           <img src="assets/icon/favicon.png">
@@ -23,7 +35,7 @@
     <ion-card-content>
       Proyecto en primera fase de control de accesos. Desarrolado para Boletera XXX por Vionico1.
     </ion-card-content>
-  </ion-card>
+  </ion-card>-->
   <ion-card *ngIf="userData">
 
     <ion-card-header>

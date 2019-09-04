@@ -14,6 +14,11 @@ import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { Contacts } from '@ionic-native/contacts/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
+import { firestore } from 'firebase';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +26,9 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    NgxQRCodeModule
+    NgxQRCodeModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [
     StatusBar,

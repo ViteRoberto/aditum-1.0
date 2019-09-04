@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item *ngIf="evento">
+    <ion-input required type="text" placeholder="Nombre" [(ngModel)] = "evento.nombre"></ion-input>
+  </ion-item>
+
+</ion-content>
